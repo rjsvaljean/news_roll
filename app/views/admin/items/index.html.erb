@@ -1,0 +1,32 @@
+<% include_stylesheet 'admin/items/items' %>
+
+<h1>Items</h1>
+
+<p>You can enter News Items  here, which will show up on the public side of your website.</p>
+
+<table cellspacing="0" cellpadding="0" border="0" class="index" id="items">
+
+  <thead>
+    <tr>
+      <th class="item">Link</th>
+      <th class="modify">Modify</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr class="node level-1">
+        <td class="item">
+          <%= image('items/item') %>
+          <%= link_to item.en_headline, edit_admin_item_url(:id => item.id) %>
+        </td>
+        <td class="remove">
+          <%= link_to image('remove', :alt => 'Remove link'), remove_admin_item_url(:id => item.id) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+<p><%= link_to image("items/new-item", :alt => "New item"), {:action => :new} %></p>

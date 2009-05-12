@@ -1,0 +1,49 @@
+<% form_for [:admin, @item] do |f| %>
+  <div class="form_area">
+    <div  id="en_item_form_area">
+      <h3> English </h3>
+      <p class="headline">
+        <label for="item_headline">Headline</label>
+        <%= f.text_field "en_headline", :class => 'textbox', :maxlength => 255 %>
+      </p>
+
+      <p class="leadtext">
+        <label for="item_leadtext">Lead Text</label>
+        <%= f.text_area "en_leadtext", :class => 'textbox', :maxlength => 255, :rows => 5 %>
+      </p>
+
+      <p class="content">
+        <label for="item_content">Content</label>
+        <%= f.text_area "en_content", :class => 'textbox', :maxlength => 255 %>
+      </p>
+
+       <span class="clear">&nbsp;</span>
+    </div>
+    <div  id="de_item_form_area">
+      <h3> German </h3>
+      <p class="headline">
+        <label for="item_headline">Headline</label>
+        <%= f.text_field "de_headline", :class => 'textbox', :maxlength => 255 %>
+      </p>
+
+      <p class="leadtext">
+        <label for="item_leadtext">Lead Text</label>
+        <%= f.text_area "de_leadtext", :class => 'textbox', :maxlength => 255, :rows => 4 %>
+      </p>
+
+      <p class="content">
+        <label for="item_content">Content</label>
+        <%= f.text_area "de_content", :class => 'textbox', :maxlength => 255 %>
+      </p>
+
+       <span class="clear">&nbsp;</span>
+    </div>
+  </div>
+
+  <p class="buttons">
+    <%= save_model_button(@item) %>
+    <%= save_model_and_continue_editing_button(@item) %>
+    or 
+    <%= link_to "Cancel", {:action => :index} %>
+  </p>
+<% end %>

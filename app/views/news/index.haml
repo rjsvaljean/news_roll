@@ -1,0 +1,9 @@
+#news_list
+  %ul
+  - for i in 0...4
+    %li#news_snippet
+      %span#news_headline 
+        = @items[i][:headline]+" : "
+      %span#news_leadtext 
+        = @items[i][:leadtext]
+        =link_to "[more]", :controller => "news", :action => "show", :id => @items[i][:id]
