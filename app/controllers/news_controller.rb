@@ -1,7 +1,7 @@
 class NewsController < ApplicationController
   radiant_layout 'Base'
   no_login_required
-  beffore_filter :set_language
+  before_filter :set_language
 
   def index
     begin
