@@ -44,6 +44,6 @@ class NewsController < ApplicationController
   end
 
   def set_language
-    session[:language] ||= accept_language.first[0..1]
+    session[:language] ||= accepted_languages.first[0..1]
   end
 end
